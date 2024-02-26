@@ -95,15 +95,15 @@ jobs:
       - name: Create the package
         run: dotnet pack .\src\K.Extensions.Similarity\K.Extensions.Similarity.csproj -v normal --configuration Release -o:nupkg 
 
-      # - name: Push generated package to GitHub registry
-      #   run: dotnet nuget push **/K.Extensions*.nupkg --source "https://nuget.pkg.github.com/Atroxt/index.json" --api-key ${{ secrets.GIT_TOKEN }} --skip-duplicate 
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push **/K.Extensions*.nupkg --source "https://nuget.pkg.github.com/Atroxt/index.json" --api-key ${{ secrets.GIT_TOKEN }} --skip-duplicate 
       
 
-      # - name: Upload packages
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: NugetPackage-Artifacts
-      #     path: ./nupkg/*.nupkg
-      #   # Use always() to always run this step to publish test results when there are test failures
-      #   if: ${{ always() }}
+      - name: Upload packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: NugetPackage-Artifacts
+          path: ./nupkg/*.nupkg
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
 
