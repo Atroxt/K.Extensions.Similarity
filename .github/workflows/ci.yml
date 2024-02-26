@@ -98,6 +98,9 @@ jobs:
       - name: Push generated package to GitHub registry
         run: dotnet nuget push **/K.Extensions*.nupkg --source "https://nuget.pkg.github.com/Atroxt/index.json" --api-key ${{ secrets.GIT_TOKEN }} --skip-duplicate 
       
+      - name: Push generated package to Nuget registry
+        run: dotnet nuget push **/K.Extensions*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{ secrets.NUGET_TOKEN }} --skip-duplicate 
+            
 
       - name: Upload packages
         uses: actions/upload-artifact@v3
