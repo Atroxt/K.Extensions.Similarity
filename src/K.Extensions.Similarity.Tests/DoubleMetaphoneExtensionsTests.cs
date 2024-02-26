@@ -34,7 +34,7 @@ namespace K.Extensions.Similarity.Tests
         [DataRow("scheider", "SKTR")]
         [DataRow("schooner", "XKNR")]
         [DataRow("schenker", "XKNK")]
-        [DataRow("island", "XKNK")]
+        [DataRow("island", "ALNT")]
         [DataRow("SUGAR", "SKR")]
         [DataRow("", "")]
         public void TestToDoubleMetaphone(string input, string expectedMetaphone)
