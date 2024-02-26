@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("K.Extensions.Similarity.Tests")]
 namespace K.Extensions.Similarity
 {
     /// <summary>
@@ -917,7 +917,7 @@ namespace K.Extensions.Similarity
         /// </summary>
         /// <param name="self">The character to check.</param>
         /// <returns>true if the character is a vowel; otherwise, false.</returns>
-        static bool IsVowel(this char self)
+        internal static bool IsVowel(this char self)
         {
             return (self == charA) || (self == charE) || (self == charI)
                 || (self == charO) || (self == charU) || (self == charY);
