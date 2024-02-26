@@ -1,0 +1,3 @@
+﻿v0.0.1
+	starts with DiecCoefficient, DoubleMetaphone, LongestCommonSubsequence,
+	JaroWinkler, Levenshtein
